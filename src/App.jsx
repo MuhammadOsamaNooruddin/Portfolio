@@ -1,12 +1,22 @@
-import React from 'react';
+import React from "react";
+import Navbar from "./sections/Navbar/Navabr";
+import { DarkModeProvider } from "./Generic/DarkModeContext/DarkModeContext";
 
 const App = () => {
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
-      <h1 className="text-4xl font-bold text-navy">Hello, World!</h1>
-      <h1 className="text-4xl font-bold text-navy">Portfolio</h1>
+    <DarkModeProvider>
+    <div className="container mx-auto max-w-7xl">
+      {/** Navbar */}
+      <Navbar />
+      {/** Hero section */}
+      {/** About */}
+      {/** Skills */}
+      {/** Experience */}
+      {/** Projects */}
+      {/** Footer */}
     </div>
+    </DarkModeProvider>
   );
-}
+};
 
 export default App;
