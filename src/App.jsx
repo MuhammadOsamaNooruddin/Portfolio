@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./sections/Navbar/Navabr";
 import { DarkModeProvider } from "./Generic/DarkModeContext/DarkModeContext";
+import HeroSection from "./sections/HeroSection/Hero";
 
 const App = () => {
   return (
@@ -9,6 +10,7 @@ const App = () => {
       {/** Navbar */}
       <Navbar />
       {/** Hero section */}
+      <HeroSection />
       {/** About */}
       {/** Skills */}
       {/** Experience */}
