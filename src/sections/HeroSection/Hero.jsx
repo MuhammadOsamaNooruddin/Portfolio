@@ -1,13 +1,13 @@
-import React from "react";
+import React, { Suspense } from "react";
 import HeroText from "../../components/HeroText";
 import ParallaxBackground from "../../components/ParallaxBackground";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
+import { Float } from "@react-three/drei";
 import { Astronaut } from "../../components/HeroSectionModel/Astronut";
 import { useMediaQuery } from "react-responsive";
-import { easing } from "maath";
 import {useDarkMode} from "../../Generic/DarkModeContext/DarkModeContext";
 import {motion} from 'motion/react'
+import Loader from "../../components/Loader/Loader";
 
 const container = {
     width: 40,
@@ -70,11 +70,14 @@ const HeroSection = () => {
         style={{ width: "100vw", height: "100vh", margin: 0 }}
       >
         <Canvas camera={{ position: [0, 1, 3] }}>
+            <Suspense fallback={<Loader />}>
+          <Float>
           <Astronaut
             scale={isMobile && 0.23}
             position={isMobile && [0, -0.15, 0]}
-          />
-          <ambientLight intensity={0.5} />
+            />
+            </Float>
+            </Suspense>
         </Canvas>
       </figure>
 
@@ -94,8 +97,10 @@ const HeroSection = () => {
             }}
         >
             <motion.div style={iconWrapper}>
-                <span style={{ ...iconStyle, opacity: darkMode ? 0 : 1 }}>🌞</span>
-                <span style={{ ...iconStyle, opacity: darkMode ? 1 : 0 }}>🌙</span>
+                {/* <span style={{ ...iconStyle, opacity: darkMode ? 0 : 1 }}>🌞</span> */}
+                <img src='assets/sun.png' alt="dark" style={{ ...iconStyle, opacity: darkMode ? 0 : 1 }} />
+                <img src='assets/moon.png' alt="light" style={{ ...iconStyle, opacity: darkMode ? 1 : 0 }} />
+                {/* <span style={{ ...iconStyle, opacity: darkMode ? 1 : 0 }}>🌙</span> */}
             </motion.div>
 
             <motion.div
@@ -109,10 +114,10 @@ const HeroSection = () => {
             />
         </button>
           {/** will apply dark mode */}
-        <a href="/" className=""><img className="hover:cursor-pointer transition-transform hover:scale-110" src="assets/linkedin-white.png" alt="linedin" style={{width:"40px", height:"40px", color: "white" }} /></a>
-        <a href="/" className=""><img className="hover:cursor-pointer transition-transform hover:scale-110" src="assets/mail-white.png" alt="linedin" style={{width:"40px", height:"40px" }} /></a>
-        <a href="/" className=""><img className="hover:cursor-pointer transition-transform hover:scale-110" src="assets/github-white.png" alt="linedin" style={{width:"40px", height:"40px" }} /></a>
-        <a href="/" className=""><img className="hover:cursor-pointer transition-transform hover:scale-110" src="assets/insta-white.png" alt="linedin" style={{width:"40px", height:"40px" }} /></a>
+        <a href="/" className=""><img className="hover:cursor-pointer transition-transform hover:scale-110 hover:filter hover:invert" src="assets/linkedin-white.png" alt="linedin" style={{width:"40px", height:"40px", color: "white" }} /></a>
+        <a href="/" className=""><img className="hover:cursor-pointer transition-transform hover:scale-110 hover:filter hover:invert" src="assets/mail-white.png" alt="linedin" style={{width:"40px", height:"40px" }} /></a>
+        <a href="/" className=""><img className="hover:cursor-pointer transition-transform hover:scale-110 hover:filter hover:invert" src="assets/github-white.png" alt="linedin" style={{width:"40px", height:"40px" }} /></a>
+        <a href="/" className=""><img className="hover:cursor-pointer transition-transform hover:scale-110 hover:filter hover:invert" src="assets/insta-white.png" alt="linedin" style={{width:"40px", height:"40px" }} /></a>
       </section>
       {/** Social Links */}
     </section>
