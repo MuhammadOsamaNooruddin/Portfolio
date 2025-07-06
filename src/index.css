@@ -56,10 +56,32 @@ body {
   background-color: black;
 }
 
+a{
+  @apply hover:text-white cursor-none
+}
+
 /* body.light {
   background-color: white;
   color: black;
 } */
+
+@theme inline {
+  --animate-meteor: meteor 5s linear infinite;
+ 
+  @keyframes meteor {
+    0% {
+      transform: rotate(var(--angle)) translateX(0);
+      opacity: 1;
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(var(--angle)) translateX(-500px);
+      opacity: 0;
+    }
+  }
+}
 
 .c-space {
   @apply sm:px-10 px-5 lg:px-15;
@@ -91,7 +113,7 @@ body {
 }
 
 .nav-li {
-  @apply text-neutral-400 hover:text-white max-sm:w-full hover:cursor-pointer max-sm:rounded-md py-2 max-sm:px-5;
+  @apply text-neutral-400 hover:text-white max-sm:w-full max-sm:rounded-md py-2 max-sm:px-5;
 }
 
 .nav-link {

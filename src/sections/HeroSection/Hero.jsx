@@ -5,58 +5,56 @@ import { Canvas } from "@react-three/fiber";
 import { Float } from "@react-three/drei";
 import { Astronaut } from "../../components/HeroSectionModel/Astronut";
 import { useMediaQuery } from "react-responsive";
-import {useDarkMode} from "../../Generic/DarkModeContext/DarkModeContext";
+// import {useDarkMode} from "../../Generic/DarkModeContext/DarkModeContext";
 import {motion} from 'motion/react'
 import Loader from "../../components/Loader/Loader";
 
-const container = {
-    width: 40,
-    height: 80,
-    backgroundColor: "white",
-    borderRadius: 50,
-    cursor: "pointer",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    // padding: 4,
-    position: "relative",
-    overflow: "hidden",
-}
+// const container = {
+//     width: 40,
+//     height: 80,
+//     backgroundColor: "white",
+//     borderRadius: 50,
+//     display: "flex",
+//     flexDirection: "column",
+//     alignItems: "center",
+//     position: "relative",
+//     overflow: "hidden",
+// }
 
-const handle = {
-    width: 40,
-    height: 38,
-    backgroundColor: "#EF973F",
-    borderRadius: "50%",
-    zIndex: 2,
-}
+// const handle = {
+//     width: 40,
+//     height: 38,
+//     backgroundColor: "#EF973F",
+//     borderRadius: "50%",
+//     zIndex: 2,
+// }
 
-const iconWrapper = {
-    position: "absolute",
-    top: 10,
-    left: 0,
-    right: 0,
-    height: 60,
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "space-between",
-    pointerEvents: "none",
-    zIndex: 1,
-}
+// const iconWrapper = {
+//     position: "absolute",
+//     top: 10,
+//     left: 0,
+//     right: 0,
+//     height: 60,
+//     display: "flex",
+//     flexDirection: "column",
+//     alignItems: "center",
+//     justifyContent: "space-between",
+//     pointerEvents: "none",
+//     zIndex: 1,
+// }
 
-const iconStyle = {
-    fontSize: 20,
-    // transition: "opacity 0.3s ease",
-    opacity: 1,
-    color: "#fff",
-}
+// const iconStyle = {
+//     fontSize: 20,
+//     transition: "opacity 0.3s ease",
+//     opacity: 1,
+//     color: "#fff",
+// }
 
 const HeroSection = () => {
   const isMobile = useMediaQuery({ maxWidth: 853 });
-  const { darkMode, toggleDarkMode } = useDarkMode();
+  // const { darkMode, toggleDarkMode } = useDarkMode();
   return (
-    <section className="flex items-start justify-center md:items-start md:justify-start min-h-screen overflow-hidden c-space">
+    <section id="home" className="flex items-start justify-center md:items-start md:justify-start min-h-screen overflow-hidden c-space">
       <HeroText />
 
       {/** background images */}
@@ -89,7 +87,7 @@ const HeroSection = () => {
           {/* <button onClick={toggleDarkMode} className="p-4 curs-pointer text-neutral-400 hover:text-white focus:outline-none">
             <img src={`${darkMode ? "assets/moon.png" : "assets/sun.png"}`} alt={`${darkMode ? "Dark_Mode" : "Light_Mode"}`} className="cursor-pointer" />
           </button> */}
-          <button
+          {/* <button
             onClick={toggleDarkMode}
             style={{
                 ...container,
@@ -97,10 +95,8 @@ const HeroSection = () => {
             }}
         >
             <motion.div style={iconWrapper}>
-                {/* <span style={{ ...iconStyle, opacity: darkMode ? 0 : 1 }}>🌞</span> */}
                 <img src='assets/sun.png' alt="dark" style={{ ...iconStyle, opacity: darkMode ? 0 : 1 }} />
                 <img src='assets/moon.png' alt="light" style={{ ...iconStyle, opacity: darkMode ? 1 : 0 }} />
-                {/* <span style={{ ...iconStyle, opacity: darkMode ? 1 : 0 }}>🌙</span> */}
             </motion.div>
 
             <motion.div
@@ -112,12 +108,18 @@ const HeroSection = () => {
                 }}
                 style={handle}
             />
-        </button>
+        </button> */}
           {/** will apply dark mode */}
-        <a href="/" className=""><img className="hover:cursor-pointer transition-transform hover:scale-110 hover:filter hover:invert" src="assets/linkedin-white.png" alt="linedin" style={{width:"40px", height:"40px", color: "white" }} /></a>
-        <a href="/" className=""><img className="hover:cursor-pointer transition-transform hover:scale-110 hover:filter hover:invert" src="assets/mail-white.png" alt="linedin" style={{width:"40px", height:"40px" }} /></a>
-        <a href="/" className=""><img className="hover:cursor-pointer transition-transform hover:scale-110 hover:filter hover:invert" src="assets/github-white.png" alt="linedin" style={{width:"40px", height:"40px" }} /></a>
-        <a href="/" className=""><img className="hover:cursor-pointer transition-transform hover:scale-110 hover:filter hover:invert" src="assets/insta-white.png" alt="linedin" style={{width:"40px", height:"40px" }} /></a>
+        <a href="https://www.linkedin.com/in/muhammad-osama-noor-uddin-1908741b4/" target="_blank"><img className=" transition-transform hover:scale-110 hover:filter hover:invert" src="assets/linkedin-white.png" alt="linedin" style={{width:"40px", height:"40px", color: "white" }} /></a>
+<a href="#contactEmail" className="">
+  <img
+    className="transition-transform hover:scale-110 hover:filter hover:invert"
+    src="assets/mail-white.png"
+    alt="contact"
+    style={{ width: "40px", height: "40px" }}
+  />
+</a>        <a href="https://github.com/MuhammadOsamaNooruddin" target="_blank"><img className=" transition-transform hover:scale-110 hover:filter hover:invert" src="assets/github-white.png" alt="linedin" style={{width:"40px", height:"40px" }} /></a>
+        <a href="/" target="_blank"><img className=" transition-transform hover:scale-110 hover:filter hover:invert" src="assets/insta-white.png" alt="linedin" style={{width:"40px", height:"40px" }} /></a>
       </section>
       {/** Social Links */}
     </section>

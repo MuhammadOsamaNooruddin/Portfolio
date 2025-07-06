@@ -4,7 +4,7 @@ import {experiences} from "../../constants/index";
 
 const Experiences = () => {
     return (
-        <section className="w-full">
+        <section className="w-full" id='work'>
             <Timeline data={experiences} />
         </section>
     )

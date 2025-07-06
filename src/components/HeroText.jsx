@@ -1,10 +1,11 @@
 import { animate } from "motion";
 import { FlipWords } from "./FlipWords";
 import { motion } from "motion/react";
+import { ShinyButton } from "./ShinnyResumeButton";
 
 
 const HeroText = () => {
-    const words = ["Secure", "Modern", "Scalable"];
+    const words = ["Modern", "Scalable","Responsive"];
     const variants={
         hidden: { opacity: 0, x: -50 },
         visible: { opacity: 1, x: 0 },
@@ -46,6 +47,12 @@ const HeroText = () => {
           transition={{ delay: 1.8 }}>
             Digital Experience
           </motion.p>
+          <motion.div className="mt-5" variants={variants}
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 2 }}>
+          <a href="/assets/Osama_CV.pdf" target="_blank" rel="noopener noreferrer"><ShinyButton>Download CV</ShinyButton></a> 
+          </motion.div>
         </div>
       </div>
 
@@ -78,6 +85,9 @@ const HeroText = () => {
           transition={{ delay: 1.8 }}>
             Digital Experience
           </motion.p>
+          <div className="mt-5">
+          <a href="/assets/Osama_CV.pdf" target="_blank" rel="noopener noreferrer"><ShinyButton>Download CV</ShinyButton></a> 
+          </div>
         </div>
       </div>
 

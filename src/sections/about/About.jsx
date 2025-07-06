@@ -7,8 +7,8 @@ import { hover } from "motion";
 const About = () => {
     const grid2Container = useRef();
   return (
-    <section className="c-space mt-20 md:mt-30">
-        <h2 className="text-heading">About Me</h2>
+    <section className="c-space mt-20 md:mt-30" id="about">
+        <h2 className="text-heading text-center sm:text-start ">About Me</h2>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-6 md:auto-rows-[18rem] mt-12">
             
             {/* Card 1 */}
