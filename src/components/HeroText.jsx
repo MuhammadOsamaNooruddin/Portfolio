@@ -85,9 +85,12 @@ const HeroText = () => {
           transition={{ delay: 1.8 }}>
             Digital Experience
           </motion.p>
-          <div className="mt-5">
+          <motion.div className="mt-5" variants={variants}
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 2 }}>
           <a href="/assets/Osama_CV.pdf" target="_blank" rel="noopener noreferrer"><ShinyButton>Download CV</ShinyButton></a> 
-          </div>
+          </motion.div>
         </div>
       </div>
 

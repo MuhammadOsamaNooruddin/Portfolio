@@ -8,7 +8,7 @@ const slugs = [
   "css3",
   "redux",
   "tailwindcss",
-  "sass", // covers both sass and scss
+  "sass",
   "jest",
   "git",
   "webpack",
@@ -18,7 +18,7 @@ const slugs = [
   "github",
   "vscode",
   "figma",
-  "mui", // replaces materialUI
+  "mui",
 ];
 
 export function Frameworks() {

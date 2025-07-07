@@ -6,8 +6,9 @@ import { Float } from "@react-three/drei";
 import { Astronaut } from "../../components/HeroSectionModel/Astronut";
 import { useMediaQuery } from "react-responsive";
 // import {useDarkMode} from "../../Generic/DarkModeContext/DarkModeContext";
-import {motion} from 'motion/react'
+import { motion } from "motion/react";
 import Loader from "../../components/Loader/Loader";
+import { FloatingButtons } from "../../components/FloatingButtonsSection/FloatingButtons";
 
 // const container = {
 //     width: 40,
@@ -54,7 +55,10 @@ const HeroSection = () => {
   const isMobile = useMediaQuery({ maxWidth: 853 });
   // const { darkMode, toggleDarkMode } = useDarkMode();
   return (
-    <section id="home" className="flex items-start justify-center md:items-start md:justify-start min-h-screen overflow-hidden c-space">
+    <section
+      id="home"
+      className="flex items-start justify-center md:items-start md:justify-start min-h-screen overflow-hidden c-space"
+    >
       <HeroText />
 
       {/** background images */}
@@ -68,26 +72,26 @@ const HeroSection = () => {
         style={{ width: "100vw", height: "100vh", margin: 0 }}
       >
         <Canvas camera={{ position: [0, 1, 3] }}>
-            <Suspense fallback={<Loader />}>
-          <Float>
-          <Astronaut
-            scale={isMobile && 0.23}
-            position={isMobile && [0, -0.15, 0]}
-            />
+          <Suspense fallback={<Loader />}>
+            <Float>
+              <Astronaut
+                scale={isMobile && 0.23}
+                position={isMobile && [0, -0.15, 0]}
+              />
             </Float>
-            </Suspense>
+          </Suspense>
         </Canvas>
       </figure>
 
       {/** 3D Model */}
 
       {/** Social Links */}
-      <section className="hidden fixed right-4 top-1/2 transform -translate-y-1/2 z-50 sm:flex flex-col gap-5 items-center space-y-4 p-3 pt-5 pb-5 bg-[#00776A] rounded-4xl">
+      {/* <section className="fixed right-4 top-1/2 transform -translate-y-1/2 z-50 flex flex-col gap-3 items-center p-3 pt-5 pb-5 bg-[#00776A] rounded-4xl sm:gap-5"> */}
         {/** will apply dark mode */}
-          {/* <button onClick={toggleDarkMode} className="p-4 curs-pointer text-neutral-400 hover:text-white focus:outline-none">
+        {/* <button onClick={toggleDarkMode} className="p-4 curs-pointer text-neutral-400 hover:text-white focus:outline-none">
             <img src={`${darkMode ? "assets/moon.png" : "assets/sun.png"}`} alt={`${darkMode ? "Dark_Mode" : "Light_Mode"}`} className="cursor-pointer" />
           </button> */}
-          {/* <button
+        {/* <button
             onClick={toggleDarkMode}
             style={{
                 ...container,
@@ -109,19 +113,45 @@ const HeroSection = () => {
                 style={handle}
             />
         </button> */}
-          {/** will apply dark mode */}
-        <a href="https://www.linkedin.com/in/muhammad-osama-noor-uddin-1908741b4/" target="_blank"><img className=" transition-transform hover:scale-110 hover:filter hover:invert" src="assets/linkedin-white.png" alt="linedin" style={{width:"40px", height:"40px", color: "white" }} /></a>
-<a href="#contactEmail" className="">
-  <img
-    className="transition-transform hover:scale-110 hover:filter hover:invert"
-    src="assets/mail-white.png"
-    alt="contact"
-    style={{ width: "40px", height: "40px" }}
-  />
-</a>        <a href="https://github.com/MuhammadOsamaNooruddin" target="_blank"><img className=" transition-transform hover:scale-110 hover:filter hover:invert" src="assets/github-white.png" alt="linedin" style={{width:"40px", height:"40px" }} /></a>
-        <a href="/" target="_blank"><img className=" transition-transform hover:scale-110 hover:filter hover:invert" src="assets/insta-white.png" alt="linedin" style={{width:"40px", height:"40px" }} /></a>
-      </section>
+        {/** will apply dark mode */}
+        {/* <a
+          href="https://www.linkedin.com/in/muhammad-osama-noor-uddin-1908741b4/"
+          target="_blank"
+        >
+          <img
+            className=" transition-transform hover:scale-110 hover:filter hover:invert"
+            src="assets/linkedin-white.png"
+            alt="linedin"
+            style={{ width: "40px", height: "40px", color: "white" }}
+          />
+        </a>
+        <a href="#contactEmail" className="">
+          <img
+            className="transition-transform hover:scale-110 hover:filter hover:invert"
+            src="assets/mail-white.png"
+            alt="contact"
+            style={{ width: "40px", height: "40px" }}
+          />
+        </a>{" "}
+        <a href="https://github.com/MuhammadOsamaNooruddin" target="_blank">
+          <img
+            className=" transition-transform hover:scale-110 hover:filter hover:invert"
+            src="assets/github-white.png"
+            alt="linedin"
+            style={{ width: "40px", height: "40px" }}
+          />
+        </a>
+        <a href="/" target="_blank">
+          <img
+            className=" transition-transform hover:scale-110 hover:filter hover:invert"
+            src="assets/insta-white.png"
+            alt="linedin"
+            style={{ width: "40px", height: "40px" }}
+          />
+        </a> */}
+      {/* </section> */}
       {/** Social Links */}
+      <FloatingButtons />
     </section>
   );
 };
