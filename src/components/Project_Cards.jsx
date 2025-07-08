@@ -27,6 +27,14 @@ const projects = [
     link: "https://github.com/pavankumarmurugan/kickstarters.git",
     tech: ["TypeScript", "React", "AntDesign", "Css"],
   },
+  {
+    title: "SmartWardrobe",
+    image: "assets/smartwardrobe.png",
+    description:
+      "SmartWardrobe is the AI-Driven Fashion Shopping Platform project! This is an innovative fashion e-commerce site that harnesses the power of Artificial Intelligence (AI) to provide a personalized, smart, and intuitive shopping experience.",
+    link: "https://github.com/pavankumarmurugan/kickstarters.git",
+    tech: ["JavaScript", "React", "Css"],
+  },
   
 ];
 
@@ -45,7 +53,7 @@ const Project_Cards = () => {
         <BlurFade key={project.title} delay={0.25 + index * 0.1} inView>
              <div
           key={index}
-          className="p-4 bg-gradient-to-b from-storm to-indigo rounded-2xl relative flex flex-col justify-between h-full"
+          className="p-4 bg-gradient-to-b from-storm to-indigo rounded-2xl relative flex flex-col justify-between h-full hover:scale-105 transition-transform duration-300"
         >
           <div>
             <img
