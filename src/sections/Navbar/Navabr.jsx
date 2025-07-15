@@ -23,6 +23,11 @@ function Navigation() {
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleClick =() => {
+    setIsOpen(false);
+    document.body.style.overflow = "auto"; // Enable scrolling when the menu is closed
+  }
+
   return (
     <div className="fixed inset-x-0 z-20 w-full backdrop-blur-lg ">
       <div className="mx-auto c-space max-w-7xl">
@@ -56,7 +61,7 @@ const Navbar = () => {
             animate={{ opacity: 1, x: 0 }}
             style={{height: "100vh"}}
             transition={{ duration: 1 }}>
-                <nav className="pb-5"><Navigation /></nav>
+                <nav className="pb-5" onClick={handleClick} ><Navigation /></nav>
             </motion.div>}
 
     </div>

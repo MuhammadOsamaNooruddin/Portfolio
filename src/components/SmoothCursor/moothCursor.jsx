@@ -167,6 +167,7 @@ export function SmoothCursor({
 
   return (
     <motion.div
+      className="hidden md:block"
       style={{
         position: "fixed",
         left: cursorX,
